@@ -1,0 +1,56 @@
+@import "~bootstrap-reboot";
+@import "~css-mqpacker-starter";
+
+@font-face {
+  src: url("../assets/fonts/Fuckenusername-Regular.ttf") format("truetype");
+  font-family: "fucken";
+  font-weight: normal;
+}
+
+@font-face {
+  src: url("../assets/fonts/FuckenusernameMi2-Regular.ttf") format("truetype");
+  font-family: "fuckru";
+  font-weight: normal;
+}
+
+@font-face {
+  src: url("../assets/fonts/IndieFlower-Regular.ttf") format("truetype");
+  font-family: "IndieFlower";
+  font-weight: normal;
+}
+
+body {
+  font-family: "fucken", "fuckru", "IndieFlower";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+input[type="text"] {
+  text-align: center;
+  border-style: dashed;
+  border-color: black;
+  border-width: 3px;
+  font-size: 36px;
+  color: black;
+}
+
+button {
+  color: white;
+  background-color: black;
+  border-radius: 15px;
+  border: none;
+  padding: 15px 50px;
+  font-size: 24px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
