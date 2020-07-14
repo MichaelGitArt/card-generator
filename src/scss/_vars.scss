@@ -1,0 +1,49 @@
+$color: red;
+
+// Controls
+$icon-radius: 6px 8px 5px 6px;
+
+@mixin input-border {
+  border: 3px dashed #000;
+}
+
+@mixin placeholder($color) {
+  &::placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin custom-scroll($light: false) {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  @if $light {
+    &::-webkit-scrollbar-track {
+      background: #cecece;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #474747;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #000;
+    }
+  } @else {
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+}

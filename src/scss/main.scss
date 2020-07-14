@@ -1,31 +1,19 @@
 @import "~bootstrap-reboot";
 @import "~css-mqpacker-starter";
-
-@font-face {
-  src: url("../assets/fonts/Fuckenusername-Regular.ttf") format("truetype");
-  font-family: "fucken";
-  font-weight: normal;
-}
-
-@font-face {
-  src: url("../assets/fonts/FuckenusernameMi2-Regular.ttf") format("truetype");
-  font-family: "fuckru";
-  font-weight: normal;
-}
-
-@font-face {
-  src: url("../assets/fonts/IndieFlower-Regular.ttf") format("truetype");
-  font-family: "IndieFlower";
-  font-weight: normal;
-}
+@import "fonts";
 
 body {
   font-family: "fucken", "fuckru", "IndieFlower";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  font-size: 20px;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+input,
+button,
+textarea {
+  outline: none;
 }
 
 .container {
@@ -35,22 +23,10 @@ body {
   margin: 0 auto;
 }
 
-input[type="text"] {
-  text-align: center;
-  border-style: dashed;
-  border-color: black;
-  border-width: 3px;
-  font-size: 36px;
-  color: black;
-}
-
-button {
-  color: white;
-  background-color: black;
-  border-radius: 15px;
-  border: none;
-  padding: 15px 50px;
-  font-size: 24px;
-  text-transform: uppercase;
-  cursor: pointer;
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
