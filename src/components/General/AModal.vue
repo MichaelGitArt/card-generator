@@ -87,23 +87,39 @@ export default {
   position: relative;
   width: 100%;
   max-height: 90%;
-  max-width: 450px;
+  max-width: 550px;
   display: flex;
   flex-direction: column;
   background: #000;
   border-radius: 30px;
-  padding: 10px 15px 20px;
+  padding: 15px 30px 25px;
   color: #fff;
   &__close-btn {
     position: absolute;
-    right: 20px;
-    top: 20px;
-    height: 20px;
-    width: 20px;
+    right: 13px;
+    top: 13px;
+    height: 30px;
+    width: 30px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.2);
+    }
+    svg {
+      height: 20px;
+      width: 20px;
+    }
   }
+}
+
+.a-modal-header h3 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .a-modal-content {

@@ -4,8 +4,11 @@
     <div class="a-textfield">
       <input
         class="a-textfield__input"
+        :class="{ 'a-textfield__input--centered': this.centered }"
         type="text"
         :placeholder="placeholder"
+        :value="value"
+        @change="$emit('input', $event.target.value)"
       />
 
       <control-icons v-if="options" static>
@@ -38,6 +41,11 @@ export default {
       type: String,
     },
     options: Array,
+    value: String,
+    centered: {
+      type: Boolean,
+      default: false,
+    },
   },
   data: () => ({
     option: -1,
@@ -49,9 +57,8 @@ export default {
   },
   methods: {
     choose(id) {
-      console.log("id", id);
       this.option = id;
-      this.$emit("choose", id);
+      this.$emit("changeOption", id);
     },
   },
 };
@@ -78,6 +85,9 @@ export default {
     width: auto;
     flex-grow: 1;
     @include placeholder(rgba(0, 0, 0, 0.25));
+    &--centered {
+      text-align: center;
+    }
   }
 }
 </style>

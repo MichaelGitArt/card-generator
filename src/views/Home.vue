@@ -2,22 +2,39 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <h2>здесь будет результат</h2>
+        <template v-if="cardUrl">
+          <img :src="cardUrl" :alt="'Открытка для' + name" />
+          <a-btn @click="clear">Згенерировать еще раз</a-btn>
+        </template>
+        <h2 v-else>здесь будет результат</h2>
       </div>
       <div class="col">
-        <form class="main-form">
+        <div v-if="cardUrl" class="result">
+          <h3>Ваша открітка готова</h3>
+          <a-btn @click="copyLink">Копировать ссылку для отправки</a-btn>
+          <a class="result__clear" @click.prevent="clear" href="#"
+            >Охрана! Отмена!</a
+          >
+        </div>
+        <form v-else @submit.prevent="send" class="main-form">
           <a-textfield
-            :options="nameOption"
+            class="main-form__control"
+            :options="genderOptions"
+            v-model="name"
+            @changeOption="changeGender"
             label="Для кого открытка?"
             placeholder="Аня"
+            centered
           />
           <a-select
+            class="main-form__control"
             v-model="holiday"
             :items="holidaySelect"
             label="С чем поздравляем?"
             placeholder="Аня"
           />
           <a-select
+            class="main-form__control"
             v-model="mode"
             :items="modeSelect"
             label="Режим"
@@ -54,15 +71,15 @@
         eius excepturi iste neque, nobis optio quibusdam similique ullam
         voluptates.
       </p>
-      <a-btn @click="close">Ok</a-btn>
+      <a-btn @click="close" light class="w-100">Понятно</a-btn>
     </a-modal>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
 import AModal from "../components/General/AModal";
+import { mapState } from "vuex";
+import { copyText } from "../utils/copy-text";
 
 export default {
   name: "Home",
@@ -70,8 +87,11 @@ export default {
     AModal,
   },
   data: () => ({
+    name: "",
     faqModal: false,
-    nameOption: [
+
+    genderOption: "",
+    genderOptions: [
       {
         name: "Ж",
         id: 0,
@@ -124,15 +144,33 @@ export default {
       },
     ],
   }),
-  mounted() {
-    fetch("https://loh.biz/8/generate.php?name=Michael").then((result) => {
-      console.log(result);
-    });
-  },
   methods: {
+    changeGender(id) {
+      this.genderOption = id;
+    },
     openModal() {
       this.faqModal = true;
     },
+    clear() {
+      this.$store.commit("clear");
+    },
+    copyLink() {
+      copyText(this.shareUrl);
+    },
+    send() {
+      const name = this.name;
+      fetch(`https://loh.biz/8/generate.php?name=${name}`)
+        .then((res) => res.json())
+        .then((resData) => {
+          if (resData.error) {
+            return alert(resData.result);
+          }
+          this.$store.dispatch("setCard", resData.result);
+        });
+    },
+  },
+  computed: {
+    ...mapState(["cardUrl", "cardId", "shareUrl"]),
   },
 };
 </script>
@@ -145,8 +183,28 @@ export default {
 }
 
 .main-form {
-  max-width: 300px;
+  text-transform: uppercase;
+  max-width: 500px;
   display: flex;
+  width: 100%;
   flex-direction: column;
+  text-align: center;
+  &__control {
+    margin-bottom: 30px;
+  }
+}
+
+.result {
+  text-align: center;
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .a-btn {
+    margin-bottom: 20px;
+  }
+  &__clear {
+    text-transform: uppercase;
+  }
 }
 </style>

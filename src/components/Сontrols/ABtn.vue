@@ -6,6 +6,10 @@ export default {
       default: "button",
     },
     type: String,
+    light: {
+      type: Boolean,
+      default: false,
+    },
   },
   render(r) {
     return r(
@@ -13,6 +17,7 @@ export default {
       {
         class: {
           "a-btn": true,
+          "a-btn--light": this.light,
         },
         on: {
           click: () => {
@@ -36,5 +41,25 @@ export default {
   font-size: 24px;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background-color: #232323;
+  }
+  &:focus {
+    background-color: #343434;
+  }
+  &--light {
+    background-color: #fff;
+    color: #000;
+    &:hover {
+      background-color: #d9d9d9;
+    }
+    &:focus {
+      background-color: #eaeaea;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
 }
 </style>

@@ -7,7 +7,9 @@
       type="text"
       :placeholder="placeholder"
     >
-      <span v-if="activeItem">{{ activeItem.name }}</span>
+      <span class="a-select__value" v-if="activeItem">{{
+        activeItem.name
+      }}</span>
       <control-icons>
         <control-icon class="a-select__arrow" />
       </control-icons>
@@ -102,7 +104,7 @@ export default {
 
 <style scoped lang="scss">
 .a-select-wrap {
-  font-size: 1.3em;
+  font-size: 1.1em;
   display: inline-flex;
   flex-direction: column;
   position: relative;
@@ -126,6 +128,9 @@ export default {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 24px;
+  }
+  &__value {
+    flex-grow: 1;
   }
 }
 .a-select-dropdown {
