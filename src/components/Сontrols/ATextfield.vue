@@ -88,7 +88,7 @@ export default {
     border: none;
     height: 56px;
     min-width: 0;
-    width: auto;
+    width: 100px;
     flex-grow: 1;
     position: relative;
     z-index: 4;

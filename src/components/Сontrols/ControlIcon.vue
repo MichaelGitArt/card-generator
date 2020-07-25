@@ -26,7 +26,7 @@ export default {
   color: #fff;
   display: inline-flex;
   justify-content: center;
-  font-size: 25px;
+  font-size: 16px;
   text-align: center;
   align-items: center;
   height: 34px;
