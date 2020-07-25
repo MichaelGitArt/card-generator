@@ -91,7 +91,7 @@ export default {
     width: 100px;
     flex-grow: 1;
     position: relative;
-    z-index: 4;
+    z-index: 2;
     @include placeholder(rgba(0, 0, 0, 0.25));
     &--centered {
       text-align: center;

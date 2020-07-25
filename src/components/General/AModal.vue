@@ -75,6 +75,7 @@ export default {
   top: 0;
   right: 0;
   bottom: 0;
+  z-index: 10;
   background-color: rgba(255, 255, 255, 0.62);
   display: flex;
   align-items: center;
