@@ -1,6 +1,7 @@
 @import "~bootstrap-reboot";
 @import "~css-mqpacker-starter";
 @import "fonts";
+@import "util/nprogress";
 
 body {
   font-family: "fucken", "fuckru", "IndieFlower";
@@ -33,4 +34,10 @@ textarea {
 
 .w-100 {
   width: 100%;
+}
+
+@include md {
+  body {
+    font-size: 22px;
+  }
 }

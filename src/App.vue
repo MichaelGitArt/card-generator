@@ -9,5 +9,6 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  padding: 30px 0 20px;
 }
 </style>

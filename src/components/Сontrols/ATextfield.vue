@@ -84,6 +84,8 @@ export default {
     min-width: 0;
     width: auto;
     flex-grow: 1;
+    position: relative;
+    z-index: 4;
     @include placeholder(rgba(0, 0, 0, 0.25));
     &--centered {
       text-align: center;

@@ -30,7 +30,8 @@ export default {
   text-align: center;
   align-items: center;
   height: 34px;
-  width: 34px;
+  min-width: 34px;
+  padding: 0 4px;
   cursor: pointer;
   transition: all 0.2s;
   border: 2px solid #000;

@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <img v-if="cardUrl" :src="cardUrl" :alt="'Открытка для' + name" />
+  <div class="container share">
+    <img v-if="cardUrl" :src="cardUrl" alt="Открытка для тебя" />
   </div>
 </template>
 
@@ -17,4 +17,13 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    max-width: 100%;
+  }
+}
+</style>

@@ -32,13 +32,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "~css-mqpacker-starter";
+
 .a-btn {
   color: white;
   background-color: black;
   border-radius: 15px;
   border: none;
   padding: 15px 50px;
-  font-size: 24px;
+  font-size: 0.85em;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s;

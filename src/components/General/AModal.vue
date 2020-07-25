@@ -17,8 +17,6 @@ export default {
     },
   },
   render(h) {
-    console.log("modal!");
-
     let content = [
       h(
         "div",
@@ -118,13 +116,15 @@ export default {
 .a-modal-header h3 {
   text-transform: uppercase;
   text-align: center;
-  font-size: 28px;
+  font-size: 1em;
   margin-bottom: 10px;
 }
 
 .a-modal-content {
   overflow-y: auto;
   max-height: 100%;
+  font-size: 1em;
+
   @include custom-scroll();
 }
 </style>
