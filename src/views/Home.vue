@@ -28,7 +28,6 @@
             v-model="name"
             @changeOption="changeGender"
             label="Для кого открытка?"
-            placeholder="Аня"
             centered
           />
           <a-select
@@ -137,9 +136,10 @@ export default {
       const category = this.controls.categories.find(
         (cat) => cat.id === this.category
       ).key;
-
+      const gender = this.controls.genders.find((cat) => cat.id === this.gender)
+        .key;
       fetch(
-        `https://loh.biz/8/api.php?action=image&name=${this.name}&category=${category}&mode=${mode}`
+        `https://loh.biz/8/api.php?action=image&name=${this.name}&category=${category}&mode=${mode}&gender=${gender}`
       )
         .then((res) => res.json())
         .then((resData) => {

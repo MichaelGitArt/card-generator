@@ -60,11 +60,17 @@ export default new Vuex.Store({
 function convertForControl(obj) {
   const arr = [];
   Object.keys(obj).forEach((key, index) => {
-    arr.push({
+    const item = {
       key,
       id: index,
       name: obj[key],
-    });
+    };
+    if (key === "female") {
+      item.placeholder = "Аня";
+    } else if (key === "male") {
+      item.placeholder = "Миша";
+    }
+    arr.push(item);
   });
   return arr;
 }

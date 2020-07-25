@@ -6,7 +6,7 @@
         class="a-textfield__input"
         :class="{ 'a-textfield__input--centered': this.centered }"
         type="text"
-        :placeholder="placeholder"
+        :placeholder="placeholder || (activeOption && activeOption.placeholder)"
         :value="value"
         @change="$emit('input', $event.target.value)"
       />
@@ -59,6 +59,12 @@ export default {
     choose(id) {
       this.option = id;
       this.$emit("changeOption", id);
+    },
+  },
+  computed: {
+    activeOption() {
+      if (!this.options || this.option === -1) return null;
+      return this.options.find((option) => option.id === this.option);
     },
   },
 };
