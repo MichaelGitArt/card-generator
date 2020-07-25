@@ -122,9 +122,10 @@ export default {
 }
 
 .a-modal-content {
+  text-transform: uppercase;
+  font-size: 0.7em;
   overflow-y: auto;
   max-height: 100%;
-  font-size: 1em;
 
   @include custom-scroll();
 }

@@ -56,22 +56,18 @@
     </div>
     <a-modal v-model="faqModal" title="Как єто работает?" v-slot="{ close }">
       <p>
-        Как єто работает бьвао.
+        Это сервис для создания онлайн и офлайн поздравительных открыток.
       </p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias
-        eius excepturi iste neque, nobis optio quibusdam similique ullam
-        voluptates.
+        Заполнив все поля, выбери режим: добрый или сарказм (режим сарказм
+        подходит для людей только с хорошим чувством юмора. Если вы не уверены в
+        том, что получатель оценит, то лучше не рисковать).
       </p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias
-        eius excepturi iste neque, nobis optio quibusdam similique ullam
-        voluptates.
+        После нажатия кнопки сгенерировать, ваша открытка будет готова!
       </p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias
-        eius excepturi iste neque, nobis optio quibusdam similique ullam
-        voluptates.
+        Скачайте сгенерированную открытку или отправте получателю ссылку
       </p>
       <a-btn @click="close" light class="w-100">Понятно</a-btn>
     </a-modal>

@@ -3,11 +3,13 @@
 @import "fonts";
 @import "util/nprogress";
 
+html {
+  font-size: 28px;
+}
 body {
   font-family: "fucken", "fuckru", "IndieFlower";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 28px;
   line-height: 1.1;
 }
 
@@ -37,7 +39,7 @@ textarea {
 }
 
 @include md {
-  body {
+  html {
     font-size: 22px;
   }
 }

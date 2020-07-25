@@ -10,11 +10,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    download: {
+      type: Boolean,
+      default: false,
+    },
   },
   render(r) {
     return r(
       this.tag,
       {
+        attrs: {
+          download: this.download,
+        },
         class: {
           "a-btn": true,
           "a-btn--light": this.light,
@@ -40,7 +47,7 @@ export default {
   border-radius: 15px;
   border: none;
   padding: 15px 50px;
-  font-size: 0.85em;
+  font-size: 1rem;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s;
