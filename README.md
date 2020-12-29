@@ -1,4 +1,5 @@
 # card-generator
+https://card-generator.vercel.app/
 
 ## Project setup
 ```
